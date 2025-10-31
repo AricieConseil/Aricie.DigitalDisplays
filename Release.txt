@@ -1,3 +1,7 @@
 ﻿<h3>Aricie.DigitalDisplays</h3>
 <hr/>
-<b>Version 1.0.0</b>
+<b>Version 1.0.1</b>
+<ul>
+<li>Fix: Remove unwanted css class which force white font</li>
+<li>Fix: Updated html and css for Bootstrap 5 display</li>
+</ul>

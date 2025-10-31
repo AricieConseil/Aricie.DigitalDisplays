@@ -1,20 +1,20 @@
 ﻿<dotnetnuke type="Package" version="5.0">
-  <packages><package name="Aricie.DigitalDisplays" type="Module" version="1.0.0">
+  <packages><package name="Aricie.DigitalDisplays" type="Module" version="1.0.1">
   <friendlyName>Aricie - DigitalDisplays</friendlyName>
   <description />
   <iconFile>/Images/icon_extensions_32px.png</iconFile>
   <owner>
-    <name>Aricie</name>
-    <organization>Aricie</organization>
-    <url>https://aricie.com</url>
-    <email>support@aricie.fr</email>
+    <name>Aricie Conseil</name>
+    <organization>Aricie Conseil</organization>
+    <url>https://www.aricie-conseil.fr</url>
+    <email>support@aricie-conseil.fr</email>
   </owner>
   <license />
   <releaseNotes src="Release.txt"></releaseNotes>
   <azureCompatible>True</azureCompatible>
   <dependencies>
-    <dependency type="coreVersion">09.08.00</dependency>
-    <dependency type="managedPackage" version="2.1.0">Aricie.Shared</dependency>
+    <dependency type="coreVersion">09.13.3</dependency>
+    <dependency type="managedPackage" version="2.3.0">Aricie.Shared</dependency>
   </dependencies>
   <components>
     <component type="Module">
@@ -140,20 +140,8 @@
           <name>index.html</name>
         </file>
         <file>
-          <path>Scripts</path>
-          <name>angular-route.js</name>
-        </file>
-        <file>
-          <path>Scripts</path>
-          <name>angular-route.min.js</name>
-        </file>
-        <file>
           <path>Scripts\angular-ui</path>
           <name>sortable.js</name>
-        </file>
-        <file>
-          <path>Scripts</path>
-          <name>angular.js</name>
         </file>
         <file>
           <path>Scripts</path>
@@ -165,19 +153,15 @@
         </file>
         <file>
           <path>Scripts</path>
+          <name>angular-route.min.js</name>
+        </file>
+        <file>
+          <path>Scripts</path>
           <name>angular-route.min.js.map</name>
         </file>
         <file>
           <path>Scripts</path>
-          <name>ngDialog.js</name>
-        </file>
-        <file>
-          <path>Scripts</path>
           <name>ngDialog.min.js</name>
-        </file>
-        <file>
-          <path>Scripts</path>
-          <name>ngprogress.js</name>
         </file>
         <file>
           <path>Scripts</path>
