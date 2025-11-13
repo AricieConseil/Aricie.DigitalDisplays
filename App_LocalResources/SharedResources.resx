@@ -1392,8 +1392,9 @@
   <data name="Try.Text" xml:space="preserve">
     <value>Try</value>
   </data>
-  <data name="ADSettings_DisplayMode.Help" xml:space="preserve">
-    <value>0: Count, 1: Count down</value>
+  <data name="ADSettings_NewDisplayMode.Help" xml:space="preserve">
+    <value>Counters allows you to display one or more counters. 
+Countdown allows you to display the countdown time relative to a date.</value>
   </data>
   <data name="ADSettings_NewDisplayMode.Text" xml:space="preserve">
     <value>Display Mode</value>
@@ -1416,7 +1417,7 @@
   <data name="CountDown.Text" xml:space="preserve">
     <value>CountDown</value>
   </data>
-  <data name="FontAwesome.Text" xml:space="preserve">
+  <data name="ADSettings_FontAwesome.Text" xml:space="preserve">
     <value>Include FontAwesome</value>
   </data>
 </root>

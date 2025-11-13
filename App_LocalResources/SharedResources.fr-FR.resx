@@ -147,8 +147,9 @@
   <data name="ItemAdded.Message" xml:space="preserve">
     <value>Nouveau compteur ajouté !</value>
   </data>
-  <data name="ADSettings_DisplayMode.Help" xml:space="preserve">
-    <value>0 : Compteurs, 1 : Décompte</value>
+  <data name="ADSettings_NewDisplayMode.Help" xml:space="preserve">
+    <value>Compteurs permet d'afficher 1 ou plusieurs compteurs 
+Décompte permet d'afficher le décompte de temps par rapport à une date</value>
   </data>
   <data name="ADSettings_NewDisplayMode.Text" xml:space="preserve">
     <value>Mode d'affichage</value>
@@ -171,7 +172,7 @@
   <data name="CountDown.Text" xml:space="preserve">
     <value>Décompte</value>
   </data>
-  <data name="FontAwesome.Text" xml:space="preserve">
+  <data name="ADSettings_FontAwesome.Text" xml:space="preserve">
     <value>Inclure FontAwesome</value>
   </data>
 </root>
