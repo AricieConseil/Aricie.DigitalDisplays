@@ -13,8 +13,8 @@
   <releaseNotes src="Release.txt"></releaseNotes>
   <azureCompatible>True</azureCompatible>
   <dependencies>
-    <dependency type="coreVersion">09.13.3</dependency>
-    <dependency type="managedPackage" version="2.3.0">Aricie.Shared</dependency>
+    <dependency type="coreVersion">09.12.0</dependency>
+    <dependency type="managedPackage" version="2.4.0">Aricie.Shared</dependency>
   </dependencies>
   <components>
     <component type="Module">

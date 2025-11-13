@@ -120,21 +120,6 @@
   <data name="ADSettings_Cancel.Text" xml:space="preserve">
     <value>Annuler</value>
   </data>
-  <data name="ADSettings_DisplayMode.Help" xml:space="preserve">
-    <value>0 : Compteurs, 1 : Décompte</value>
-  </data>
-  <data name="ADSettings_DisplayMode.Text" xml:space="preserve">
-    <value>Mode d'affichage</value>
-  </data>
-  <data name="ADSettings_EditDate.Help" xml:space="preserve">
-    <value>Date cible pour le compte à rebours</value>
-  </data>
-  <data name="ADSettings_EditDate.Text" xml:space="preserve">
-    <value>Date cible</value>
-  </data>
-  <data name="ADSettings_Save.Text" xml:space="preserve">
-    <value>Enregistrer</value>
-  </data>
   <data name="CancelSettings.Warning" xml:space="preserve">
     <value>Etes-vous sûr de vouloir quitter sans sauvegarder ?</value>
   </data>
@@ -146,9 +131,6 @@
   </data>
   <data name="Counter_icon.Text" xml:space="preserve">
     <value>Icône</value>
-  </data>
-  <data name="Counter_icon2.Text" xml:space="preserve">
-    <value>Assistant sélection de l'icône</value>
   </data>
   <data name="Counter_label.Text" xml:space="preserve">
     <value>Texte</value>
@@ -164,5 +146,29 @@
   </data>
   <data name="ItemAdded.Message" xml:space="preserve">
     <value>Nouveau compteur ajouté !</value>
+  </data>
+  <data name="ADSettings_DisplayMode.Help" xml:space="preserve">
+    <value>0 : Compteurs, 1 : Décompte</value>
+  </data>
+  <data name="ADSettings_NewDisplayMode.Text" xml:space="preserve">
+    <value>Mode d'affichage</value>
+  </data>
+  <data name="ADSettings_Save.Text" xml:space="preserve">
+    <value>Enregistrer</value>
+  </data>
+  <data name="Counter_icon2.Text" xml:space="preserve">
+    <value>Assistant sélection de l'icône</value>
+  </data>
+  <data name="ADSettings_EditDate.Help" xml:space="preserve">
+    <value>Date cible pour le compte à rebours</value>
+  </data>
+  <data name="ADSettings_EditDate.Text" xml:space="preserve">
+    <value>Date cible</value>
+  </data>
+  <data name="Counter.Text" xml:space="preserve">
+    <value>Compteurs</value>
+  </data>
+  <data name="CountDown.Text" xml:space="preserve">
+    <value>Décompte</value>
   </data>
 </root>

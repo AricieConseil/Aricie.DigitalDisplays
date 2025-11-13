@@ -3,6 +3,7 @@ using Aricie.DigitalDisplays.Components.Entities;
 using Aricie.DNN.ComponentModel;
 using Aricie.DNN.Settings;
 using Aricie.DNN.UI.Attributes;
+using Aricie.DNN.UI.Controls;
 using Aricie.DNN.UI.WebControls;
 using Aricie.DNN.UI.WebControls.EditControls;
 using Aricie.Services;
@@ -14,7 +15,10 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Data.SqlClient;
+using System.Reflection;
 using System.Xml.Serialization;
+using static Aricie.DNN.Images;
 
 namespace Aricie.DigitalDisplays.Components.Settings
 {
@@ -36,8 +40,67 @@ namespace Aricie.DigitalDisplays.Components.Settings
             CountDown
         }
 
-        [ConditionalVisible(nameof(DisplaysModeSpecified), true)]
-        public int DisplayMode {
+        private Display _displayMode = Display.Counter;
+        [AutoPostBack]
+        public Display NewDisplayMode
+        {
+            get
+            {
+                if (DisplaysModeSpecified)
+                {
+                    switch (_displayMode)
+                    {
+                        case Display.CountDown:
+                            ShowCountDownSettings = true;
+                            ShowCountersList = false;
+                            break;
+                        case Display.Counter:
+                            ShowCountersList = true;
+                            ShowCountDownSettings = false;
+                            break;
+                        default:
+                            ShowCountersList = false;
+                            ShowCountDownSettings = false;
+                            break;
+                    }
+                }
+                else
+                {
+                    if (DisplayMode != -1)
+                    {
+                            _displayMode = (Display)DisplayMode;
+                            DisplaysModeSpecified = true;
+                    }
+                }
+
+                return _displayMode;
+            }
+            set
+            {
+                _displayMode = value;
+                displayMode = (int)value;
+                DisplaysModeSpecified = true;
+
+                switch (_displayMode)
+                {
+                    case Display.CountDown:
+                        ShowCountDownSettings = true;
+                        ShowCountersList = false;
+                        break;
+                    default:
+                        ShowCountersList = true;
+                        ShowCountDownSettings = false;
+                        break;
+                }
+                RaisePropertyChanged();
+            }
+
+        }
+
+
+        [Browsable(false)]
+        public int DisplayMode
+        {
             get
             {
                 return displayMode;
@@ -47,20 +110,6 @@ namespace Aricie.DigitalDisplays.Components.Settings
                 if (displayMode == -1 && value != -1)
                 {
                     displayMode = value;
-                    DisplaysModeSpecified = true;
-                }
-                switch (displayMode)
-                {
-                    case 1:
-                        {
-                            ShowCountDownSettings = true;
-                            break;
-                        }
-                    default:
-                        {
-                            ShowCountersList = true;
-                            break;
-                        }
                 }
             }
         }
@@ -101,7 +150,7 @@ namespace Aricie.DigitalDisplays.Components.Settings
         [Editor(typeof(AricieDateEditControl), typeof(EditControl))]
         public DateTime EditDate
         {
-            get;set;
+            get; set;
         }
 
         [ActionButton(IconName.Undo, IconOptions.Normal, "CancelSettings.Warning", Features = ActionButtonFeatures.CloseSection | ActionButtonFeatures.CloseListItem | ActionButtonFeatures.SkipValidation)]

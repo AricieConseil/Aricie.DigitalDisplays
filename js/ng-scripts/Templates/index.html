@@ -1,6 +1,6 @@
 ﻿<div class="angularmodule">
     <div class="edsBB__row row">
-        <div ng-if="vm.settings['Aricie.Displays'].DisplayMode == 0" class="edsBB__col col-sm-12 edsBB__droppable ui-droppable" data-col="12">
+        <div ng-if="vm.settings['Aricie.Displays'].NewDisplayMode == 0" class="edsBB__col col-sm-12 edsBB__droppable ui-droppable" data-col="12">
             <div class="edsBB_droppableItem" data-assetid="Counters_CountersStyle4_group" data-comment="Do not edit or remove this div">
                 <div class="row py-5 text-center eds_customFont" data-features="margin,padding">
                     <div class="col-md-6 col-lg-3" ng-repeat="display in vm.settings['Aricie.Displays'].Displays">
@@ -12,7 +12,7 @@
             </div>
 
         </div>
-        <div class="mx-auto w-auto" ng-if="vm.settings['Aricie.Displays'].DisplayMode == 1">
+        <div class="mx-auto w-auto" ng-if="vm.settings['Aricie.Displays'].NewDisplayMode == 1">
             <div id="countdown">
                 <div ng-show="vm.CountDown.months > 0"><span class="col-form-label d-inline">{{ vm.CountDown.months }}</span><div class="col-form-label d-inline">Mois</div>
                 </div><div ng-show="vm.CountDown.months > 0 || vm.CountDown.days > 0"><span class="col-form-label d-inline">{{ vm.CountDown.days }}</span><div class="col-form-label d-inline">Jours</div>

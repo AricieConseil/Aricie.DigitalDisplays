@@ -39,7 +39,7 @@
             $scope.progressbar.setColor('red');
             $scope.progressbar.start();
             if (vm.settings != null && vm.settings["Aricie.Displays"] != null) {
-                if (vm.settings["Aricie.Displays"].DisplayMode == 0) {
+                if (vm.settings["Aricie.Displays"].NewDisplayMode == 0) {
                     itemService.getNumbers()
                         .then(function (response) {
                             vm.Counters = response.data;
@@ -59,7 +59,7 @@
                             $scope.progressbar.complete();
                         });
                 }
-                else if (vm.settings["Aricie.Displays"].DisplayMode == 1) {
+                else if (vm.settings["Aricie.Displays"].NewDisplayMode == 1) {
                     var deadline = new Date(Date.parse(vm.settings["Aricie.Displays"].EditDate));
                     vm.CountDown.initializeClock(deadline, vm.ModuleId);
                     $scope.progressbar.complete();
