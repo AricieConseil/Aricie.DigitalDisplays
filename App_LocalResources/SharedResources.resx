@@ -1416,4 +1416,7 @@
   <data name="CountDown.Text" xml:space="preserve">
     <value>CountDown</value>
   </data>
+  <data name="FontAwesome.Text" xml:space="preserve">
+    <value>Include FontAwesome</value>
+  </data>
 </root>

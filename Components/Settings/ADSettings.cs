@@ -34,6 +34,8 @@ namespace Aricie.DigitalDisplays.Components.Settings
         //    navigationManager = DependencyProvider.GetRequiredService<INavigationManager>();
         //}
 
+        private bool fontAwesome = false;
+
         public enum Display
         {
             Counter,
@@ -68,8 +70,8 @@ namespace Aricie.DigitalDisplays.Components.Settings
                 {
                     if (DisplayMode != -1)
                     {
-                            _displayMode = (Display)DisplayMode;
-                            DisplaysModeSpecified = true;
+                        _displayMode = (Display)DisplayMode;
+                        DisplaysModeSpecified = true;
                     }
                 }
 
@@ -96,6 +98,24 @@ namespace Aricie.DigitalDisplays.Components.Settings
             }
 
         }
+
+        public bool FontAwesome
+        {
+            get
+            {
+                return fontAwesome;
+            }
+            set
+            {
+                if (fontAwesome != value)
+                {
+                    fontAwesome = value;
+                    UpdateFontAwesomeInclusion(fontAwesome);
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
 
 
         [Browsable(false)]
@@ -219,6 +239,38 @@ namespace Aricie.DigitalDisplays.Components.Settings
             var handler = PropertyChanged;
             if (handler != null)
                 handler(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+
+        private void UpdateFontAwesomeInclusion(bool include)
+        {
+            var page = System.Web.HttpContext.Current?.Handler as System.Web.UI.Page;
+            if (page != null)
+            {
+                var fontAwesomeUrl = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css";
+                var key = "IncludeFontAwesome";
+                if (include)
+                {
+                    if (page.Header.FindControl(key) == null)
+                    {
+                        var link = new System.Web.UI.HtmlControls.HtmlLink
+                        {
+                            Href = fontAwesomeUrl,
+                            ID = key
+                        };
+                        link.Attributes["rel"] = "stylesheet";
+                        page.Header.Controls.Add(link);
+                    }
+                }
+                else
+                {
+                    var link = page.Header.FindControl(key);
+                    if (link != null)
+                    {
+                        page.Header.Controls.Remove(link);
+                    }
+                }
+            }
         }
     }
 }

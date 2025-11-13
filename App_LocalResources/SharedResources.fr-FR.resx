@@ -171,4 +171,7 @@
   <data name="CountDown.Text" xml:space="preserve">
     <value>Décompte</value>
   </data>
+  <data name="FontAwesome.Text" xml:space="preserve">
+    <value>Inclure FontAwesome</value>
+  </data>
 </root>
