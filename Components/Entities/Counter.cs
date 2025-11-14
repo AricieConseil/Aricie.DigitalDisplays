@@ -18,8 +18,6 @@ namespace Aricie.DigitalDisplays.Components.Entities
 
         [Browsable(false)]
         public int value { get; set; } = 0;
-
-        public bool showPlus { get; set; } = false;
         public bool approximativeValue { get; set; } = false;
 
         public string label { get; set; }

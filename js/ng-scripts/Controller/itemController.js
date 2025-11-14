@@ -45,7 +45,7 @@
                             vm.Counters = response.data;
                             //for (i = 0; i < vm.settings["Aricie.Displays"].Displays.length; i++) {
                             var i = 0;
-                            $(".counter").each(function () {
+                            $("#itemApp" + vm.ModuleId + " .counter").each(function () {
                                 $(this).text(vm.Counters[i].value);
                                 $(this).addClass("eds_counter");
                                 i = i + 1;
