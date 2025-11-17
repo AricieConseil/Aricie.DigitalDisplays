@@ -6,6 +6,7 @@ using DotNetNuke.Services.Localization;
 using DotNetNuke.UI.WebControls;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Web.UI.WebControls;
 
@@ -41,13 +42,28 @@ namespace Aricie.DigitalDisplays.Components.Entities
         }
 
         [ReadOnly(true)]
-        public string table { get; set; } = "DossierSubventionPratiquant";
+        [Editor(typeof(SelectorEditControl), typeof(EditControl))]
+        [Selector("Text", "Value", false, false, "", "", false, false)]
+        public string table { get; set; }
+
         public string condition { get; set; }
 
         private ListItemCollection values = null;
 
+        
         public IList GetSelector(string propertyName)
         {
+            if (propertyName == nameof(table))
+            {
+                var tables = Aricie.DigitalDisplays.Controller.BusinessController.Instance.GetAllTables();
+                var list = new ListItemCollection();
+                foreach (string tableName in tables)
+                {
+                    list.Add(tableName);
+                }
+                return list;
+            }
+
             if (values == null)
             {
                 values = new ListItemCollection();

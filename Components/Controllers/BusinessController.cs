@@ -210,5 +210,19 @@ namespace Aricie.DigitalDisplays.Controller
             }
             return (long)value;
         }
+
+        public List<string> GetAllTables()
+        {
+            var tables = new List<string>();
+            var db = new PetaPoco.Database("SiteSqlServer");
+
+            var sql = @"SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' ORDER BY TABLE_NAME";
+            foreach (var row in db.Fetch<dynamic>(sql))
+            {
+                tables.Add(row.TABLE_NAME);
+            }
+            
+            return tables;
+        }
     }
 }
