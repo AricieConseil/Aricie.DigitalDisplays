@@ -44,7 +44,7 @@ namespace Aricie.DigitalDisplays.Components.Entities
         [ReadOnly(true)]
         [Editor(typeof(SelectorEditControl), typeof(EditControl))]
         [Selector("Text", "Value", false, false, "", "", false, false)]
-        public string table { get; set; }
+        public string table { get; set; } = "";
 
         public string condition { get; set; }
 
