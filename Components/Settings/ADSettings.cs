@@ -110,7 +110,6 @@ namespace Aricie.DigitalDisplays.Components.Settings
                 if (fontAwesome != value)
                 {
                     fontAwesome = value;
-                    UpdateFontAwesomeInclusion(fontAwesome);
                     RaisePropertyChanged();
                 }
             }
@@ -241,36 +240,5 @@ namespace Aricie.DigitalDisplays.Components.Settings
                 handler(this, new PropertyChangedEventArgs(propertyName));
         }
 
-
-        private void UpdateFontAwesomeInclusion(bool include)
-        {
-            var page = System.Web.HttpContext.Current?.Handler as System.Web.UI.Page;
-            if (page != null)
-            {
-                var fontAwesomeUrl = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css";
-                var key = "IncludeFontAwesome";
-                if (include)
-                {
-                    if (page.Header.FindControl(key) == null)
-                    {
-                        var link = new System.Web.UI.HtmlControls.HtmlLink
-                        {
-                            Href = fontAwesomeUrl,
-                            ID = key
-                        };
-                        link.Attributes["rel"] = "stylesheet";
-                        page.Header.Controls.Add(link);
-                    }
-                }
-                else
-                {
-                    var link = page.Header.FindControl(key);
-                    if (link != null)
-                    {
-                        page.Header.Controls.Remove(link);
-                    }
-                }
-            }
-        }
     }
 }

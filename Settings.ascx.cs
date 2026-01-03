@@ -27,6 +27,27 @@ namespace Aricie.DigitalDisplays
 
             this.pEditor.SetSessionDataSource(new Lazy<ADSettings>(() => AdSettings));
             this.pEditor.DataBind();
+
+            if (((ADSettings)this.pEditor.DataSource).FontAwesome)
+            {
+                addFontAwesomeInclusion();
+            }
+        }
+
+        private void addFontAwesomeInclusion()
+        {
+            var fontAwesomeUrl = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css";
+            var key = "IncludeFontAwesome";
+            if (Page.Header.FindControl(key) == null)
+            {
+                var link = new System.Web.UI.HtmlControls.HtmlLink
+                {
+                    Href = fontAwesomeUrl,
+                    ID = key
+                };
+                link.Attributes["rel"] = "stylesheet";
+                Page.Header.Controls.Add(link);
+            }
         }
     }
 }

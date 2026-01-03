@@ -167,6 +167,24 @@
             }
         };
 
+        function manageFontAwesomeCss() {
+            var fontAwesomeUrl = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css";
+            var linkId = "fontAwesomeCss";
+
+            if (vm.settings && vm.settings["Aricie.Displays"].FontAwesome) {
+                // Check if the link already exists
+                if (!document.getElementById(linkId)) {
+                    var link = document.createElement("link");
+                    link.id = linkId;
+                    link.rel = "stylesheet";
+                    link.href = fontAwesomeUrl;
+                    document.head.appendChild(link);
+                }
+            }
+        }
+
+        manageFontAwesomeCss();
+
         getDisplays();
     };
 })();
