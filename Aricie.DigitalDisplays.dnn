@@ -1,8 +1,7 @@
 ﻿<dotnetnuke type="Package" version="5.0">
-  <packages><package name="Aricie.DigitalDisplays" type="Module" version="1.0.1">
+  <packages><package name="Aricie.DigitalDisplays" type="Module" version="1.1.0">
   <friendlyName>Aricie - DigitalDisplays</friendlyName>
   <description />
-  <iconFile>/Images/icon_extensions_32px.png</iconFile>
   <owner>
     <name>Aricie Conseil</name>
     <organization>Aricie Conseil</organization>

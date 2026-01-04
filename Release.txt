@@ -1,5 +1,13 @@
 ﻿<h3>Aricie.DigitalDisplays</h3>
 <hr/>
+<b>Version 1.1.0</b>
+<ul>
+<li>Enhancement: Replaced the integer input field for setting the display mode with a user-friendly DropDownList</li>
+<li>Enhancement: Replaced the input field for the SQL table name with a DropDownList</li>
+<li>Enhancement: Added an optional checkbox to include FontAwesome if needed</li>
+<li>Enhancement: Combined the "ShowPlus" and "RoundValue" options into a single checkbox</li>
+<li>Enhancement: The "Animated Counter" functionality now works with all DNN Skins</li>
+</ul>
 <b>Version 1.0.1</b>
 <ul>
 <li>Fix: Remove unwanted css class which force white font</li>
