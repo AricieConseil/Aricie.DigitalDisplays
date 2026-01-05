@@ -1,5 +1,9 @@
 ﻿<h3>Aricie.DigitalDisplays</h3>
 <hr/>
+<b>Version 1.1.1</b>
+<ul>
+<li>Fix: Replaced variable initialization with a static path value + cleaned code</li>
+</ul>
 <b>Version 1.1.0</b>
 <ul>
 <li>Enhancement: Replaced the integer input field for setting the display mode with a user-friendly DropDownList</li>
