@@ -29,11 +29,6 @@
         vm.IsAdmin = moduleProps.IsAdmin;
         vm.CurrentTabUrl = moduleProps.CurrentTabUrl;
         vm.sortableOptions = { stop: sortStop, disabled: !vm.EditMode };
-        var jsFileLocation = $('script[src*="Aricie.DigitalDisplays/js/ng-scripts/app"]').attr('src');  // the js file path
-		jsFileLocation = jsFileLocation.replace('app.js', '');   // the js folder path
-		if (jsFileLocation.indexOf('?') > -1) {
-			jsFileLocation = jsFileLocation.substr(0, jsFileLocation.indexOf('?'));
-		}
 
         function getDisplays() {
             $scope.progressbar.setColor('red');
@@ -43,7 +38,6 @@
                     itemService.getNumbers()
                         .then(function (response) {
                             vm.Counters = response.data;
-                            //for (i = 0; i < vm.settings["Aricie.Displays"].Displays.length; i++) {
                             var i = 0;
                             $("#itemApp" + vm.ModuleId + " .counter").each(function () {
                                 $(this).text(vm.Counters[i].value);
@@ -171,7 +165,7 @@
             var fontAwesomeUrl = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css";
             var linkId = "fontAwesomeCss";
 
-            if (vm.settings && vm.settings["Aricie.Displays"].FontAwesome) {
+            if (vm.settings && vm.settings["Aricie.Displays"] && vm.settings["Aricie.Displays"].FontAwesome) {
                 // Check if the link already exists
                 if (!document.getElementById(linkId)) {
                     var link = document.createElement("link");
