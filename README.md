@@ -7,6 +7,13 @@ Aricie.DigitalDisplays is a DotNetNuke module compatible with DNN 10 that displa
 
 This module lets you define a set of counters that count rows in your database tables, apply optional simple filters, and display the results in a configurable way.
 
+**Modes**
+
+The module supports two modes: "Counter" and "Countdown".
+
+- **Counter**: Counts the number of rows in the selected table using the optional condition and approximation settings.
+- **Countdown**: Displays a timer counting down to a target date. The target date is selected using a calendar control in the counter's settings. The module shows the time remaining until that date (days, hours, minutes, seconds according to configuration).
+
 **Key features**
 
 - Define multiple counters: choose a table, give a label and an icon.
